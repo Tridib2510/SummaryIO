@@ -4,6 +4,10 @@ from langchain_classic.prompts import PromptTemplate
 from langchain_classic.chains.summarize import load_summarize_chain
 from langchain_community.document_loaders import YoutubeLoader,UnstructuredURLLoader
 from langchain_groq import ChatGroq
+import os
+from dotenv import load_dotenv
+load_dotenv()
+YOUTUBE_PROXY = os.getenv("YOUTUBE_PROXY")
 
 # Streamlit app
 st.set_page_config(page_title="LangChain: Summarize Text From YouTube or Websites",page_icon="🐧")
@@ -41,6 +45,7 @@ if st.button("Summarize the Content from YT or Website"):
                     loader=YoutubeLoader.from_youtube_url(youtube_url=url,add_video_info=False) #add_video_info=True-->Tells us weather we want to add video info or not
                 else:
                     loader=UnstructuredURLLoader(urls=[url],ssl_verified=False,
+                                                     proxies={"http": YOUTUBE_PROXY, "https": YOUTUBE_PROXY} if YOUTUBE_PROXY else None,
                                                  headers={"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"})
                     # When we are hitting the particular url the web server is also demanding what kind of headers we put on top of it like Which user agent
                     # Those headers are there to make your request look like it’s coming from a real web browser, not a bot. This is extremely important when scraping URLs.
