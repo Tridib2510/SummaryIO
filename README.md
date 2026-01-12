@@ -60,16 +60,8 @@ pip install -r requirements.txt
 ### Website Summarization
 
 ```bash
-python main.py --url "https://example.com"
+python app.py
 ```
-
-### YouTube Summarization
-
-```bash
-python main.py --youtube "https://www.youtube.com/watch?v=VIDEO_ID"
-```
-
----
 
 ## 📌 Output Example
 
