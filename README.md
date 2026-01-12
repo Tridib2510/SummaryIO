@@ -22,11 +22,8 @@ It allows users to quickly summarize long-form content from websites and YouTube
 SummaryIO/
 ├── README.md
 ├── app.py
-├── main.py
 ├── requirements.txt
-├── pyproject.toml
-├── .python-version
-└── uv.lock
+└── .gitignore
 ```
 
 ---
@@ -58,16 +55,6 @@ conda activate summaryio
 pip install -r requirements.txt
 ```
 
----
-
-## 🔐 Environment Variables
-
-```bash
-export GROQ_API_KEY="your_groq_api_key"
-```
-
----
-
 ## ▶️ Usage
 
 ### Website Summarization
@@ -98,10 +85,6 @@ python main.py --youtube "https://www.youtube.com/watch?v=VIDEO_ID"
 
 Can be deployed as:
 - Streamlit App
-- FastAPI Service
-- Docker Container
-
----
 
 ## 📜 License
 
