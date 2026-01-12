@@ -8,4 +8,6 @@ validators==0.28.1 #validates the url
 youtube_transcript_api #able to read the transcript of the youtube video from the url
 streamlit
 unstructured
+whisper
 pytube
+google-api-python-client
